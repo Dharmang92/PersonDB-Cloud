@@ -23,6 +23,10 @@ mongoose.connect(process.env.MONGODB_URI, {
     will take the request, parse it and attach it to the req object.
 */
 
+// first middleware.
+// if someone request localhost:3877/image.jpg its a static file. so express.static says 'i will serve the file from the public folder'. there's no need to go through other middlewares.
+// app.use("/page", express.static("client"));
+
 // bodyparser accepts different types of body forwards. here we are gonna accept json data.
 app.use(bodyParser.json());
 app.use("/api", routes);

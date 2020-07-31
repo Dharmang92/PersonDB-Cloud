@@ -1,7 +1,7 @@
 {
     "name": "mongodb",
     "version": "1.0.0",
-    "description": "",
+    "description": "MongoDB Collection is represented by Model in our code. 💹\r In this collection we have series of records/objects. All of them having a unique id. 🔑",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,5 +14,15 @@
         "express": "^4.17.1",
         "mongoose": "^5.9.26",
         "nodemon": "^2.0.4"
-    }
+    },
+    "devDependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Dharmang92/PersonDB-Cloud.git"
+    },
+    "keywords": [],
+    "bugs": {
+        "url": "https://github.com/Dharmang92/PersonDB-Cloud/issues"
+    },
+    "homepage": "https://github.com/Dharmang92/PersonDB-Cloud#readme"
 }
