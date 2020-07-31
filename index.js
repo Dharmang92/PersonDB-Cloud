@@ -12,6 +12,7 @@ const app = express();
 // connect to mongodb.
 mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
+    useUnifiedTopology: true, // wrote this to remove warning on nodemon.
 });
 
 /*
@@ -28,7 +29,10 @@ app.use("/api", routes);
 
 // middleware for errorhandling. next from api.js will come to this middleware now.
 app.use(function (err, req, res, next) {
-    if (err) return;
+    // 200 code. which is not proper for errors.
+    res.status(422).send({
+        error: err.message,
+    });
 }); // this is our own middleware function which can take upto 4 params.
 
 // we pass req and res paramter in the callback function to send response to the frontend or send some data.

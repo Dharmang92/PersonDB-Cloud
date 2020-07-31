@@ -37,8 +37,10 @@ router.put("/data/:id", (req, res, next) => {
 
 // delete data in the db.
 router.delete("/data/:id", (req, res, next) => {
-    // we are sending back telling them its a DELETE request
-    res.send({ type: "DELETE" });
+    const id = req.params.id;
+    Person.findByIdAndRemove({ _id: id }).then((record) => {
+        res.send({ deletedRecord: record });
+    });
 });
 
 // we can't test post, put and delete requests/routes because browser only works for get requests.
