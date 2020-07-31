@@ -31,8 +31,16 @@ router.post("/data", (req, res, next) => {
 // update data in the db.
 // variable - id
 router.put("/data/:id", (req, res, next) => {
+    // console.log(req.body);  we get an object which the user sends in the body. we will use it to update the record.
+    // we can pass 3rd param "{new: true}" in findbyidandupdate to return the new updated object instead of the record which was found which had old data.
+    // {new: true} = return the modified document rather than original.
+    Person.findByIdAndUpdate({ _id: req.params.id }, req.body, {
+        new: true,
+    }).then(function (record) {
+        res.send(record);
+    });
     // we are sending back telling them its a PUT request
-    res.send({ type: "PUT" });
+    // res.send({ type: "PUT" });
 });
 
 // delete data in the db.
