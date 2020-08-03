@@ -1,5 +1,7 @@
 # PersonDB Connectivity
 
+Need to connect to Cloud Database yet.
+
 ## [Video link](https://www.youtube.com/watch?v=aoB0IkQ_1jE&list=PL4cUxeGkcC9jBcybHMTIia56aV21o2cZ8&index=9)
 
 ## MongoDB
